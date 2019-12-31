@@ -11,10 +11,14 @@ depends=(
 makedepends=(
   'unzip'
 )
-source=("awscliv2.zip.sig::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip.sig")
-sha1sums=('SKIP')
-source=("awscliv2.zip::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip")
-sha1sums=('SKIP')
+source=(
+  "awscliv2.zip.sig::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-$arch.zip.sig"
+  "awscliv2.zip::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-$arch.zip"
+)
+sha1sums=(
+  'SKIP'
+  'SKIP'
+)
 validpgpkeys=('FB5DB77FD5C118B80511ADA8A6310ACC4672475C')
 
 package() {
