@@ -22,6 +22,10 @@ sha1sums=(
 validpgpkeys=('FB5DB77FD5C118B80511ADA8A6310ACC4672475C')
 
 package() {
-  cd "$srcdir"
-  ./aws/install -i "$pkgdir/usr/share/aws-cli" -b "$pkgdir/usr/bin"
+  ./aws/install -i "$pkgdir/opt/$pkgname" -b "$pkgdir/tmp"
+  rm -fr "$pkgdir/tmp"
+  cd "$pkgdir"
+  mkdir -p "${pkgdir}/usr/bin"
+  ln -s "/opt/$pkgname/v2/current/bin/aws2" "${pkgdir}/usr/bin/aws2"
+  ln -s "/opt/$pkgname/v2/current/bin/aws2_completer" "${pkgdir}/usr/bin/aws2_completer"
 }
