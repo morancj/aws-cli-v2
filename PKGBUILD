@@ -28,4 +28,7 @@ package() {
   mkdir -p "${pkgdir}/usr/bin"
   ln -s "/opt/$pkgname/v2/current/bin/aws2" "${pkgdir}/usr/bin/aws2"
   ln -s "/opt/$pkgname/v2/current/bin/aws2_completer" "${pkgdir}/usr/bin/aws2_completer"
+  cd "${pkgdir}/opt/aws-cli-v2/v2"
+  rm -fr "${pkgdir}/opt/aws-cli-v2/v2/current"
+  ln -s "${pkgver}" "${pkgdir}/opt/aws-cli-v2/v2/current"
 }
