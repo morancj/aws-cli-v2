@@ -1,6 +1,6 @@
 # Maintainer: Steve Engledow <steve@engledow.me>
 pkgname=aws-cli-v2
-pkgver=latest
+pkgver=2.0.0dev2
 pkgrel=1
 pkgdesc="Experimental v2 of the AWS CLI"
 arch=('x86_64')
