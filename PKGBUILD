@@ -12,8 +12,8 @@ makedepends=(
   'unzip'
 )
 source=(
-  "awscliv2.zip.sig::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-$arch.zip.sig"
-  "awscliv2.zip::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-$arch.zip"
+  "awscliv2.zip.sig::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-${arch}.zip.sig"
+  "awscliv2.zip::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-${arch}.zip"
 )
 sha1sums=(
   'SKIP'
