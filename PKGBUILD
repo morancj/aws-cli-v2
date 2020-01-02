@@ -21,6 +21,9 @@ sha1sums=(
 )
 validpgpkeys=('FB5DB77FD5C118B80511ADA8A6310ACC4672475C')
 
+options=(
+  !strip
+)
 package() {
   ./aws/install -i "${pkgdir}/opt/${pkgname}" -b "${pkgdir}/tmp"
   rm -fr "${pkgdir}/tmp"
