@@ -1,5 +1,5 @@
-# Maintainer: Steve Engledow <steve@engledow.me>
-# Contributor: Ciaran Moran <ciaran.moran@linaro.org>
+# Maintainer: Ciaran Moran <ciaran.moran@linaro.org>
+# Contributor: Steve Engledow <steve@engledow.me>
 pkgname=aws-cli-v2
 pkgver=2.0.0dev2
 pkgrel=1
