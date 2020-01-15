@@ -1,7 +1,7 @@
 # Maintainer: Ciaran Moran <ciaran.moran@linaro.org>
 # Contributor: Steve Engledow <steve@engledow.me>
 pkgname=aws-cli-v2
-pkgver=2.0.0dev2
+pkgver=2.0.0dev3
 pkgrel=1
 pkgdesc="Experimental v2 of the AWS CLI"
 arch=('x86_64')
