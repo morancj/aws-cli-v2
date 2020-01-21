@@ -1,9 +1,10 @@
-# Maintainer: Steve Engledow <steve@engledow.me>
+# Maintainer: Ciaran Moran <ciaran.moran@linaro.org>
+# Contributor: Steve Engledow <steve@engledow.me>
 pkgname=aws-cli-v2
-pkgver=latest
+pkgver=2.0.0dev3
 pkgrel=1
 pkgdesc="Experimental v2 of the AWS CLI"
-arch=('i686' 'x86_64')
+arch=('x86_64')
 url="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html"
 license=('Apache-2.0')
 depends=(
@@ -11,10 +12,24 @@ depends=(
 makedepends=(
   'unzip'
 )
-source=("awscliv2.zip::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip")
-sha1sums=('SKIP')
+source=(
+  "awscliv2.zip.sig::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-${arch}.zip.sig"
+  "awscliv2.zip::https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-${arch}.zip"
+)
+sha1sums=(
+  'SKIP'
+  'SKIP'
+)
+validpgpkeys=('FB5DB77FD5C118B80511ADA8A6310ACC4672475C')
 
 package() {
-  cd "$srcdir"
-  ./aws/install -i "$pkgdir/usr/share/aws-cli" -b "$pkgdir/usr/bin"
+  ./aws/install -i "${pkgdir}/opt/${pkgname}" -b "${pkgdir}/tmp"
+  rm -fr "${pkgdir}/tmp"
+  cd "${pkgdir}"
+  mkdir -p "${pkgdir}/usr/bin"
+  ln -s "/opt/${pkgname}/v2/current/bin/aws2" "${pkgdir}/usr/bin/aws2"
+  ln -s "/opt/${pkgname}/v2/current/bin/aws2_completer" "${pkgdir}/usr/bin/aws2_completer"
+  cd "${pkgdir}/opt/aws-cli-v2/v2"
+  rm -fr "${pkgdir}/opt/aws-cli-v2/v2/current"
+  ln -s "${pkgver}" "${pkgdir}/opt/aws-cli-v2/v2/current"
 }
