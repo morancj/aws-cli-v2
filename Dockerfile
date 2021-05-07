@@ -1,7 +1,7 @@
 # For running AWS CLI v2
 
-# Set the base image to Ubuntu (version 18.04)
-ARG UBUNTU_VERSION=bionic-20210222
+# Set the base image to Ubuntu (version 20.04)
+ARG UBUNTU_VERSION=focal-20210416
 FROM ubuntu:${UBUNTU_VERSION}
 
 # Specifying the ARGs like this allow overrides
