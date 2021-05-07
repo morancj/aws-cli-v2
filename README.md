@@ -22,7 +22,7 @@ alias docker-aws2="docker run\
  -e HOME=/srv\
  --name aws-cli-v2\
  morancj/aws-cli-v2:2.0.0dev3-0.0.1\
- aws2"
+ aws"
 ```
 
 You can now run `docker-aws2` commands. Try `docker-aws2 help`.
